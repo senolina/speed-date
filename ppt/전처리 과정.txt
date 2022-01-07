@@ -1,0 +1,118 @@
+pid가 NA인 6개 행 삭제
+
+age_o가 missing인 것은 wave 내 age_o 평균으로 넣기
+
+사전조사 안한 사람들은 int_corr이 NA 인 데이터 지움=>int_corr를 알 수가 없음
+
+pf_o_fun, pf_o_amb, pf_o_sha 이 NA인 애는 나머지를 더해서 100이 되기 때문에 0을 넣는다
+
+상대,나 둘 다 평가 안함 ? NA -> 0
+상대가 나를 평가하지 안함/  나는 평가함 ? NA -> 0
+   # outlier인 것 1개 => 삭제.
+
+상대->나 평가X,선택 O : 6개
+나->상대 평가X,선택 O : 4개 
+  # 삭제
+
+attr_o ~ shar_o 가 NA=> 0
+
+attr_o가 10이 최대, but 10.5인것 있어서 10으로 변경
+
+_o 의 여섯가지 점수 더한 것 total_o라고 함. 그리고 이것의 범주에 따라 like_o와 prob_o의 NA 채울것임=>10단위로 자름
+
+
+##met_o
+1,2로만 존재해야하므로 2보다 큰 행은 삭제함
+NA에는 2(만나지 않음)를 넣음
+
+##age 
+같은 wave내 같은 성별인 사람들의 age 평균
+
+##field_cd
+40번이 field가 operation research인데 이것은 social science 인 3번에 넣는다.
+
+
+##X... , mn_sat 은 NA가 너무 많아서 지움
+
+##exphappy 
+최빈값으로 대체
+
+#416번은 3_1의 결측치를 3_2의 값으로 넣는다.
+
+#414번은 3_1의 결측치를 성별 같은 나이 쁠마2의 평균으로 넣는다
+
+#attr~shar 이렇게 여섯가지 점수 더한 것 total2라고 함. 그리고 이것의 범주에 따라 like,prob NA채울것임->10 단위로 자름
+
+#met에 0인 값에 2를 넣음->왜냐면 1,2만 존재하기 때문(?)
+
+##설문지 1_2의 결측을 1_1로 채움
+ 
+##설문 3_2의 결측을 3_1로 채움
+
+
+#satis
+wave내 미팅은 전반적으로 만족스러웠으나 1:1 상대는 맘에 들지 않았을 경우가 발생 가능=> 일단 match가 1인 것이 많지 않음=>그럴 경우 match에 영향을 주는 변수는 아님!
+
+
+#satis_2
+match와 satis_2로 table을 그린 결과 satis에 따른 match가 달라진게 없어서 뺌 !
+
+#date
+date가 결측값인 아이가 1명 근데 얘의 go_out이 2였는데 go_out과 date의 table을 그린결과, go_out이 2인애들의 date최빈값이 => NA에 4를 넣는다.
+
+
+#match_es
+match_es는 만난 사람의 수 (round)와 밀접한 관련이 있을 것이라 생각.
+table을 그린 후 최빈값을 넣는다. 또한 1.5인 사람과 2.5인 사람 은 각각 2,3으로 3.4는 3으로 바꾼다.
+
+
+#satis_2랑 length는 뺌 
+
+#numdat_2
+round에 따라서 최빈값 넣음
+
+
+
+##1. from 범주화
+
+#1) 94115 -> San Francisco
+#2) 동부 -> 노스다코타, 사우스다코타, 네브래스카, 캔사스, 오클라호마,
+#      텍사스 Dallas, Houston, Austin, San Antonio
+#      미네소타, 위스콘신, 아이오와, 일리노이 Chicago
+#      미시간 Detroit, 미주리, 아칸소, 미시시피, 루이지애나 New Orleans
+#      앨라배마, 테네시 Nashville, 캔터키, 인디아나, 미시간, 오하이오
+#      웨스트 버지니아, 버지니아 Washington, 노스캐롤라이나, 사우스 캐롤라이나, 조지아 Atlanta
+#      플로리다 Orlando, Jacksonville, Tampa, Miami
+#      펜실베니아, 뉴욕, 버몬트, 뉴햄프셔, 메사추세츠 Boston, 코네티컷,
+#      
+#3) 서부 ->  워싱턴 Seattle Portland
+#      오레곤 , 아이다호, 몬타나, 와이오밍, 네바다, 유타, 콜로라도 Denber
+#      캘리포니아 San Francisco, San Jose, Los Angeles, Sandiego
+#      네바다 Las Vegas
+#      유타, 아리조나 Phoenix, 뉴멕시코
+
+##4)유럽
+
+##5)북아메리카
+
+##6)아시아
+
+##7)남미
+
+#dec랑 dec_o뺌 ;;;;;
+
+그 이후엔 오늘 한거
+
+
+
+
+
+
+
+
+
+
+
+
+
+
